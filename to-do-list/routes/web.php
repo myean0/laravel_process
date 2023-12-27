@@ -48,15 +48,11 @@ Route::get('/tasks', function () use($tasks) {
     ]);
 })->name('task_main');
 
-Route::get('/tasks/{id}', function($id) use ($tasks) {
+Route::get('/tasks/{id}', function($id) {
 
-    $task = collect($tasks)->firstWhere('id', $id);
-    if (!$task)
-    {
-        abort(Response::HTTP_NOT_FOUND);
-    }
-
-    return view('details', ['task' => $task]);
+    return view('details', [
+        'task' => \App\Models\Task::findOrFail($id)
+    ]);
 
 })->name('task_details');
 

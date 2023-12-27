@@ -13,7 +13,7 @@
     <p>Tamamlanmadı</p>
 @endif
 
-<p> {{ $task ->createdAt }} </p> {{-- Oluşturma Tarihi --}}
-<p> {{ $task ->updatedAt }} </p> {{-- Güncelleme Tarihi --}}
+<p> {{ $task ->created_at }} </p> {{-- Oluşturma Tarihi --}}
+<p> {{ $task ->updated_at }} </p> {{-- Güncelleme Tarihi --}}
 
 @endsection
